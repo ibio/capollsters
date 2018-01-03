@@ -25,10 +25,15 @@ export default class MultipleChoice extends React.Component {
     event.target.classList.add('active');
   };
 
+  // for parent to call
+  getBoundingClientRect(){
+    return this.refDiv.getBoundingClientRect();
+  }
+
   render() {
     const { question, answers } = this.props;
     return (
-      <div className="panel panel-primary">
+      <div className="panel panel-primary" ref={ref => {this.refDiv = ref;}}>
         <div className="panel-heading">{question}</div>
         <div className="panel-body">
           <ul className="list-group">
