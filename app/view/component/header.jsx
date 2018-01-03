@@ -5,12 +5,12 @@ import Style from 'style/component/header.scss';
 
 export default function Header(props) {
   return (
-    <nav className="navbar header">
+    <nav className="navbar navbar-fixed-top header">
       <div className="container-fluid">
         <div className="row header-main">
           <div className="col-md-3 col-sm-4 col-xs-12 nav-brand">
-            <a className="nav-logo" href='#/'>
-              <img alt="CA Pollsters"src={Config.STATIC_ROOT + 'res/fordham-university-logo.png'}/>
+            <a className="nav-logo" href='#/main'>
+              CA Pollsters
             </a>
           </div>
           <div className="col-md-6">
