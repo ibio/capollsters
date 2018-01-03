@@ -28,6 +28,7 @@ data.SPLASH_STORIES_ID = data.ROOT.indexOf('fordham.edu') > -1 ? 391 : 392;
 
 data.DIR_RULE = '#';
 data.NAV_MAIN = 'main';
+data.NAV_INCOMPLETED = 'incompleted';
 
 
 data.SEARCH_SPLITOR = '+';

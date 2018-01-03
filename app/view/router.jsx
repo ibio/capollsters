@@ -6,6 +6,7 @@ import {Router} from 'director/build/director';
 import Config from  'helper/config';
 import Util from   'helper/util';
 import Main from 'view/page/main';
+import Incompleted from 'view/page/incompleted';
 import P404 from 'view/page/p404';
 
 let _router;
@@ -24,13 +25,17 @@ function render() {
 	let navObj, searchMode;
 	// console.log(document.location.href);
 	if(document.location.pathname === '/'){
+		navObj = Util.getReportNav(path + '/');
+		searchMode = (navObj.navs[0] === Config.NAV_SEARCH);
 		switch(path){
 			case Config.NAV_MAIN:
 				document.title = 'Main';
-				navObj = Util.getReportNav(Config.NAV_REPORT + '/');
-				searchMode = (navObj.navs[0] === Config.NAV_SEARCH);
 				node = <Main title={document.title} navs={navObj.navs} nid={navObj.nid} searchMode={searchMode} />;
 				break;
+			case Config.NAV_INCOMPLETED:
+					document.title = 'Incompleted';
+					node = <Incompleted title={document.title} navs={navObj.navs} nid={navObj.nid} searchMode={searchMode} />;
+					break;
 			default:
 				document.title = 'Page Not Found - 404';
 				node = <P404 title={document.title} />;
@@ -42,7 +47,7 @@ function render() {
 	if(node){
 		ReactDOM.render(node, document.getElementById('app'));
 	}
-	
+
 }
 
 init();
