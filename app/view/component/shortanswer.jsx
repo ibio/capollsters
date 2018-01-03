@@ -9,16 +9,22 @@ import Style from 'style/component/progressbar.scss';
  * Usage:
  * <ShortAnswer question={'myQuestionText'} />
  */
-export default function ShortAnswer(props) {
-  const { question } = props;
+export default class ShortAnswer extends React.Component {
+  constructor(props){
+    super(props);
+  };
 
-  return (
-    <div className="panel panel-primary">
-      <div className="panel-heading">{question}</div>
-      <div className="panel-body">
-        <input type="text" className="form-control" />
+  render() {
+    const { question } = this.props;
+
+    return (
+      <div className="panel panel-primary">
+        <div className="panel-heading">{question}</div>
+        <div className="panel-body">
+          <input type="text" className="form-control" />
+        </div>
+        <div className="panel-footer">Panel footer</div>
       </div>
-      <div className="panel-footer">Panel footer</div>
-    </div>
-  );
+    );
+  };
 }
