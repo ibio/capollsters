@@ -7,6 +7,7 @@ import Config from  'helper/config';
 import Util from   'helper/util';
 import Main from 'view/page/main';
 import Incompleted from 'view/page/incompleted';
+import Completed from 'view/page/completed';
 import P404 from 'view/page/p404';
 
 let _router;
@@ -36,6 +37,10 @@ function render() {
 					document.title = 'Incompleted';
 					node = <Incompleted title={document.title} navs={navObj.navs} nid={navObj.nid} searchMode={searchMode} />;
 					break;
+      case Config.NAV_COMPLETED:
+          document.title = 'Completed';
+          node = <Completed title={document.title} navs={navObj.navs} nid={navObj.nid} searchMode={searchMode} />;
+          break;
 			default:
 				document.title = 'Page Not Found - 404';
 				node = <P404 title={document.title} />;
