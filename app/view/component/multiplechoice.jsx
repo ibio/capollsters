@@ -38,13 +38,13 @@ export default class MultipleChoice extends React.Component {
         <div className="panel-body">
           <ul className="list-group">
             {
-              _.map(answers, (answer) => {
-                return <li key={answer} className="list-group-item" onClick={this.handleSelected}>{answer}</li>;
+              _.map(answers, (answer, index) => {
+                return <li key={index} className="list-group-item" onClick={this.handleSelected}>{answer.text}</li>;
               })
             }
           </ul>
         </div>
-        <div className="panel-footer">Panel footer</div>
+        <div className="panel-footer"></div>
       </div>
     );
   };

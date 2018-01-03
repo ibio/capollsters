@@ -14,11 +14,15 @@ export default class ShortAnswer extends React.Component {
     super(props);
   };
 
+  getBoundingClientRect(){
+    return this.refDiv.getBoundingClientRect();
+  }
+
   render() {
     const { question } = this.props;
 
     return (
-      <div className="panel panel-primary">
+      <div className="panel panel-primary" ref={ref => {this.refDiv = ref;}}>
         <div className="panel-heading">{question}</div>
         <div className="panel-body">
           <input type="text" className="form-control" />

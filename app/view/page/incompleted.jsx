@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {TweenLite, Power2} from 'gsap';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
-import PageModel from 'model/page';
+import SurveyModel from 'model/survey';
 import Config from 'helper/config';
 import Header from 'view/component/header';
 import MultipleChoice from 'view/component/multiplechoice';
@@ -17,18 +17,23 @@ export default class Incompleted extends React.Component{
 	constructor(props){
     super(props);
 		this.panelList = [];
-    this._model = new PageModel();
-    this._model.subscribe(function(){
-			this.setState({title : this._model.title, content : this._model.content});
-		}, this);
+    this._model = new SurveyModel();
+    this._model.subscribe(() => {
+				this.setState({title : this._model.title,
+				description : this._model.description,
+				questionsList: this._model.questionList
+			});
+		});
+
 		this.state = {
 			progressIndex : -1,
+			questionsList : []
 		};
 	}
 
 	componentDidMount(){
 		// console.log(this.props.navs[0]);
-		// this._model.fetch(this.props.navs[0]);
+		this._model.fetch(this.props.navs[0]);
 		window.addEventListener('scroll', e => {this.handleWindowScroll(e);});
 	}
 
@@ -48,6 +53,15 @@ export default class Incompleted extends React.Component{
 	}
 
 	render(){
+		const questionList = this.state.questionsList.map((value, index) => {
+			let questionView;
+			if(value.options && value.options.length){
+				questionView = <MultipleChoice key={index} data-id={value.id} question={value.text} answers={value.options} ref={ref => {this.panelList.push(ref);}} />;
+			}else{
+				questionView = <ShortAnswer key={index} question={"What is your favorite animal?"} ref={ref => {this.panelList.push(ref);}} />;
+			}
+			return questionView;
+		});
 		return(
 			<div>
 				<Header>
@@ -57,17 +71,16 @@ export default class Incompleted extends React.Component{
 					<div className="row">
 						<div className="col-md-12">
 							<div className="jumbotron">
-								<h1>Hello, world!</h1>
-								<p>...</p>
+								<h1>{this.state.title}</h1>
+								<p>{this.state.description}</p>
 								<p><a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
 							</div>
 						</div>
 					</div>
 		      <div className="row">
 						<div className="col-md-12">
-							<MultipleChoice question={"Question"} answers={['hello', 'world']} ref={ref => {this.panelList.push(ref);}} />
-							<MultipleChoice question={"What is your favorite color"} answers={['blue', 'green', 'yellow', 'red']} ref={ref => {this.panelList.push(ref);}} />
-							<ShortAnswer question={"What is your favorite animal?"} />
+							{questionList}
+
 						</div>
 		      </div>
 		    </div>
