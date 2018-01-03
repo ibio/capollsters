@@ -7,6 +7,7 @@ import Config from 'helper/config';
 import Header from 'view/component/header';
 import MultipleChoice from 'view/component/multiplechoice';
 import ProgressBar from 'view/component/progressbar';
+import ShortAnswer from 'view/component/shortanswer';
 import Style from 'style/incompletedpage.scss';
 
 const HEADER_H = 80;
@@ -66,12 +67,11 @@ export default class Incompleted extends React.Component{
 						<div className="col-md-12">
 							<MultipleChoice question={"Question"} answers={['hello', 'world']} ref={ref => {this.panelList.push(ref);}} />
 							<MultipleChoice question={"What is your favorite color"} answers={['blue', 'green', 'yellow', 'red']} ref={ref => {this.panelList.push(ref);}} />
+							<ShortAnswer question={"What is your favorite animal?"} />
 						</div>
 		      </div>
-
 		    </div>
 		  </div>
 		);
 	}
-
 }

@@ -11,10 +11,12 @@ import Style from 'style/component/progressbar.scss';
  * Usage:
  * <MultipleChoice question={'myQuestionText'} answers=['array', 'of', 'answers'] />
  */
-export default function MultipleChoice(props) {
-  const { question, answers } = props;
+export default class MultipleChoice extends React.Component {
+  constructor(props) {
+    super(props);
+  };
 
-  const handleSelected = (event) => {
+  handleSelected(event) {
     const eventTarget = event.currentTarget;
     const parent = eventTarget.parentNode;
     _.map(parent.childNodes, (child) => {
@@ -23,19 +25,22 @@ export default function MultipleChoice(props) {
     event.target.classList.add('active');
   };
 
-  return (
-    <div className="panel panel-primary">
-      <div className="panel-heading">{question}</div>
-      <div className="panel-body">
-        <ul className="list-group">
-          {
-            _.map(answers, (answer) => {
-              return <li key={answer} className="list-group-item" onClick={handleSelected}>{answer}</li>;
-            })
-          }
-        </ul>
+  render() {
+    const { question, answers } = this.props;
+    return (
+      <div className="panel panel-primary">
+        <div className="panel-heading">{question}</div>
+        <div className="panel-body">
+          <ul className="list-group">
+            {
+              _.map(answers, (answer) => {
+                return <li key={answer} className="list-group-item" onClick={this.handleSelected}>{answer}</li>;
+              })
+            }
+          </ul>
+        </div>
+        <div className="panel-footer">Panel footer</div>
       </div>
-      <div className="panel-footer">Panel footer</div>
-    </div>
-  );
+    );
+  };
 }
