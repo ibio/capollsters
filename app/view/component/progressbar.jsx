@@ -9,7 +9,7 @@ import Style from 'style/component/progressbar.scss';
  * length: total length(px) of the bar
  * currentIndex: current index of question
  * Usage:
- * <ProgressBar questions={[1,2,3,4,5,6]} length={400} currentIndex={1} />
+ * <ProgressBar questions={[1,2,3,4,5,6]} length={400} currentIndex={1} handleCallback={} />
  */
 export default function ProgressBar(props) {
   const dotList = props.questions.map((value, index, list) => {

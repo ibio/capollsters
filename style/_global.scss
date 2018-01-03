@@ -5,8 +5,9 @@
 $defaultTitleColor: #343a40;
 $defaultTextColor: #868e96;
 $defaultBgColor: #212529;
-$linkActiveColor: #004080;
-$maroonColor: #999999;
+$linkDefaultColor: #fec503;
+$linkActiveColor: white;
+$linkBgColor: white;
 $linkHoverColor: black;
 
 $screen-xs-max: 767px;
@@ -17,5 +18,4 @@ $screen-md-max: 1119px;
 $screen-lg-min: 1200px;
 
 $canvas-theme-path: '~res/canvas-theme/';
-$owl-carousel-path: '~res/owlcarousel/';
 $root-path: '~res/';

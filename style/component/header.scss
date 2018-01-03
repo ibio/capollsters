@@ -7,13 +7,13 @@
   border-radius: 0;
   margin: 0;
   .header-main{
-    $height: 100px;
+    $height: 60px;
     height: $height;
     .nav-brand {
       .nav-logo{
         display: block;
         width: 200px;
-        margin-top: 30px;
+        margin-top: 10px;
         margin-left: 15px;
         font-family: 'Kaushan Script', Helvetica, Arial;
         font-size: 30px;
@@ -21,7 +21,9 @@
         img{width: 100%;}
       }
     }
-
+    .nav-progress{
+      margin-top: 10px;
+    }
     .nav-info{
       font-size: 18px;
       text-align: right;
@@ -44,6 +46,10 @@
         .nav-logo{
           margin: 10px auto 0 auto;
         }
+      }
+      .nav-progress{
+        margin-top: 0px;
+        text-align: center;
       }
       .nav-info{
         text-align: center;

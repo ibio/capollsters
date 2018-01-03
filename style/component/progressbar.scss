@@ -2,14 +2,17 @@
 @import '../global';
 
 .progressbar {
+  $progressBarHeight: 23px;
   position: relative;
-  height: 10px;
+  height: $progressBarHeight;
   .progressdots{
     list-style-type: none;
     li{
+      cursor: pointer;
       position: absolute;
+      z-index: 2;
       left: 0;
-      top: -37px;
+      top: -28px;
       color: white;
       &::before {
         content: ' \25CF';
@@ -21,6 +24,10 @@
     }
   }
   .progressbackground{
+    z-index: 1;
+    position: absolute;
+    top: 10px;
+    width: 100%;
     height: 2px;
     background-color: #fec503;
   }

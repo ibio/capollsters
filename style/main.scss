@@ -4,15 +4,14 @@
 body{
 	color: $defaultTextColor;
 	font-family: 'Raleway', sans-serif;
-  background-color: gray;
 }
 
 a{
 	transition: color, .2s ease-out;
-  color: $maroonColor;
+  color: $linkDefaultColor;
 }
 // LVHA
-a:link, a:visited, a:hover, a:active, a:focus{}
+a:link, a:visited, a:hover, a:active, a:focus{color: $linkActiveColor;}
 
 .ellipsis{
 	text-overflow:ellipsis;
@@ -71,7 +70,7 @@ a:link, a:visited, a:hover, a:active, a:focus{}
     color: white;
   }
   &:hover {
-    color: $maroonColor;
+    color: $linkBgColor;
   }
 }
 
@@ -79,13 +78,13 @@ a:link, a:visited, a:hover, a:active, a:focus{}
   padding: 8px 20px;
   color: white;
   border-radius: 20px;
-  background: $maroonColor;
+  background: $linkBgColor;
   &:visited, &:link, &:active, &:focus {
-    background-color: #990033;
-    color: white;
+    background-color: #linkBgColor;
+    color: $linkDefaultColor;
   }
   &:hover {
-    color: $maroonColor;
+    color: $linkBgColor;
     background: unset;
   }
 }
