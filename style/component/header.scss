@@ -1,0 +1,67 @@
+// partial styles
+@import '../global';
+
+.header {
+  border: unset;
+  background-color: white;
+  border-radius: 0;
+  margin: 0;
+  .header-main{
+    $height: 100px;
+    height: $height;
+    .nav-brand {
+      .nav-logo{
+        display: block;
+        width: 200px;
+        margin-top: 30px;
+        margin-left: 15px;
+        img{width: 100%;}
+      }
+    }
+
+    .nav-info{
+      font-size: 18px;
+      text-align: right;
+      height: $height;
+      line-height: $height;
+      a{margin-right: 10px;}
+    }
+  } /* end of header-main */
+
+  .header-menu{
+    height: 70px;
+    background-color: $maroonColor;
+  }
+
+}
+
+@media only screen and (max-width: $screen-xs-max) {
+  .header {
+    .header-main{
+      .nav-brand {
+        .nav-logo{
+          margin: 10px auto 0 auto;
+        }
+      }
+      .nav-info{
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+      }
+    }
+    .header-menu{
+      display: none;
+    }
+  }
+}
+
+@media only screen and (min-width: $screen-sm-min) and (max-width: $screen-md-max) {
+  .header {
+    .header-menu{
+      display: none;
+    }
+  }
+}
+// @media only screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {}
+
+

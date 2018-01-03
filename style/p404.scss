@@ -1,0 +1,14 @@
+// partial style
+@import 'global';
+
+
+.p404{
+	color: $maroonColor;
+	margin-top: 70px;
+	margin-bottom: 20px;
+
+	.p404-operate{
+		.btn-round{display: inline-block;}
+	}
+}
+
