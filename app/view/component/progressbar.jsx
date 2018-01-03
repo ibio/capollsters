@@ -14,11 +14,14 @@ import Style from 'style/component/progressbar.scss';
 export default function ProgressBar(props) {
   const dotList = props.questions.map((value, index, list) => {
     const percent = index / (list.length - 1) * props.length;
-    return (<li
-      key={index}
-      className={Classnames({'current-dot': index === props.currentIndex})}
-      style={{left: `${percent - 13}px`}}>
-    </li>);
+    return (
+      <li
+        key={index}
+        className={Classnames({'current-dot': index === props.currentIndex})}
+        style={{left: `${percent - 13}px`}}
+        onClick={e => {props.handleCallback && props.handleCallback(index, e);}}
+      />
+    );
   });
   return (
     <div className="progressbar" style={{width:`${props.length}px`}}>

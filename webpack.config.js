@@ -9,7 +9,7 @@ const extractSass = new ExtractTextPlugin({
     filename: "[name].css",
     disable: process.env.NODE_ENV === "development"
 });
- 
+
 module.exports = env => {
 	const CONFIG = {
     resolve: {
@@ -29,7 +29,7 @@ module.exports = env => {
   	entry: {
       app: path.resolve('./app') + '/' + 'main.js',
       // vendor: ['react', 'react-dom', 'babel-polyfill', 'lodash', 'jquery', 'bootstrap-sass', path.resolve('./app') + '/' + 'vendor.js'],
-      vendor: ['react', 'react-dom', 'babel-polyfill', 'lodash', path.resolve('./app') + '/' + 'vendor.js'],
+      vendor: ['react', 'react-dom', 'gsap', 'babel-polyfill', 'lodash', path.resolve('./app') + '/' + 'vendor.js'],
     },
     output: {path: path.resolve(__dirname, 'script'), publicPath:'script/', filename: '[name].bundle.js'},
     devtool: 'inline-source-map',
@@ -55,7 +55,7 @@ module.exports = env => {
           // https://github.com/webpack-contrib/css-loader
           use: extractSass.extract({
             use: [
-              {loader: "css-loader", options: {sourceMap: true, minimize: true } }, 
+              {loader: "css-loader", options: {sourceMap: true, minimize: true } },
               {loader: "sass-loader", options: {sourceMap: true, minimize: true } }
             ],
             // use style-loader in development
