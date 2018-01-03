@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import PageModel from 'model/page';
 import Config from 'helper/config';
 import Header from 'view/component/header';
+import MultipleChoice from 'view/component/multiplechoice';
 import Style from 'style/incompletedpage.scss';
 
 export default class Incompleted extends React.Component{
@@ -24,7 +25,6 @@ export default class Incompleted extends React.Component{
 	}
 
 	render(){
-		//
 		return(
 			<div>
 				<Header />
@@ -38,55 +38,10 @@ export default class Incompleted extends React.Component{
 							</div>
 						</div>
 					</div>
-
 		      <div className="row">
 						<div className="col-md-12">
-
-							<div className="panel panel-primary">
-								<div className="panel-heading">Panel heading without title</div>
-							  <div className="panel-body">
-									<ul className="list-group">
-									  <li className="list-group-item">Cras justo odio</li>
-									  <li className="list-group-item">Dapibus ac facilisis in</li>
-									  <li className="list-group-item">Morbi leo risus</li>
-									  <li className="list-group-item">Porta ac consectetur ac</li>
-									  <li className="list-group-item">Vestibulum at eros</li>
-									</ul>
-							  </div>
-							  <div className="panel-footer">Panel footer</div>
-							</div>
-
-							<div className="panel panel-primary">
-								<div className="panel-heading">Panel heading without title</div>
-								<div className="panel-body">
-									<ul className="list-group">
-										<li className="list-group-item">Cras justo odio</li>
-										<li className="list-group-item">Dapibus ac facilisis in</li>
-										<li className="list-group-item">Morbi leo risus</li>
-										<li className="list-group-item">Porta ac consectetur ac</li>
-										<li className="list-group-item">Vestibulum at eros</li>
-									</ul>
-								</div>
-								<div className="panel-footer">Panel footer</div>
-							</div>
-
-							<div className="panel panel-primary">
-								<div className="panel-heading">Panel heading without title</div>
-								<div className="panel-body">
-									<ul className="list-group">
-										<li className="list-group-item">Cras justo odio</li>
-										<li className="list-group-item">Dapibus ac facilisis in</li>
-										<li className="list-group-item">Morbi leo risus</li>
-										<li className="list-group-item">Porta ac consectetur ac</li>
-										<li className="list-group-item">Vestibulum at eros</li>
-									</ul>
-								</div>
-								<div className="panel-footer">Panel footer</div>
-							</div>
-
-
-
-
+							<MultipleChoice question={"Question"} answers={['hello', 'world']} />
+							<MultipleChoice question={"What is your favorite color"} answers={['blue', 'green', 'yellow', 'red']} />
 						</div>
 		      </div>
 
