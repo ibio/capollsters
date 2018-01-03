@@ -26,18 +26,31 @@ export default class Incompleted extends React.Component{
 		//
 		return(
 			<div>
-
-		    <div className="container-fluid">
-		      <div className="row">
-						<div className="jumbotron">
-						  <h1>Hello, world!</h1>
-						  <p>...</p>
-						  <p><a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+				<Header />
+		    <div className="container">
+					<div className="row">
+						<div className="col-md-12">
+							<div className="jumbotron">
+								<h1>Hello, world!</h1>
+								<p>...</p>
+								<p><a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+							</div>
 						</div>
+					</div>
 
+		      <div className="row">
+						<div className="col-md-12">
+							<ul className="list-group">
+							  <li className="list-group-item">Cras justo odio</li>
+							  <li className="list-group-item">Dapibus ac facilisis in</li>
+							  <li className="list-group-item">Morbi leo risus</li>
+							  <li className="list-group-item">Porta ac consectetur ac</li>
+							  <li className="list-group-item">Vestibulum at eros</li>
+							</ul>
 
-
+						</div>
 		      </div>
+
 		    </div>
 		  </div>
 		);

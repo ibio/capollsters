@@ -6,6 +6,7 @@
   background-color: white;
   border-radius: 0;
   margin: 0;
+  margin-bottom: 20px;
   .header-main{
     $height: 100px;
     height: $height;
@@ -63,5 +64,3 @@
   }
 }
 // @media only screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {}
-
-
