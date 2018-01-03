@@ -1,0 +1,36 @@
+// partial styles
+@import '../global';
+
+.progressbar {
+  position: relative;
+  height: 10px;
+  .progressdots{
+    list-style-type: none;
+    li{
+      position: absolute;
+      left: 0;
+      top: -37px;
+      color: white;
+      &::before {
+        content: ' \25CF';
+        font-size: 50px;
+      }
+    }
+    .current-dot{
+      color: #fec503;
+    }
+  }
+  .progressbackground{
+    height: 2px;
+    background-color: #fec503;
+  }
+}
+
+@media only screen and (max-width: $screen-xs-max) {
+
+}
+
+@media only screen and (min-width: $screen-sm-min) and (max-width: $screen-md-max) {
+
+}
+// @media only screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {}

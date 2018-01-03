@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Config from 'helper/config';
+import ProgressBar from 'view/component/progressbar';
 import Style from 'style/component/header.scss';
 
 export default function Header(props) {
@@ -14,7 +15,7 @@ export default function Header(props) {
             </a>
           </div>
           <div className="col-md-6">
-
+            <ProgressBar questions={[1,2,3,4,5,6]} length={400} currentIndex={1} />
           </div>
           <div className="col-md-3 col-sm-8 col-xs-12 nav-info">
             <a className="btn-round" href="">Button 1</a>

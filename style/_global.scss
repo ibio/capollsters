@@ -2,11 +2,12 @@
 // those are global settings: variables / mixins
 // usage: @import 'global';
 
-$defaultTitleColor: #253041;
-$defaultTextColor: #004080;
+$defaultTitleColor: #343a40;
+$defaultTextColor: #868e96;
+$defaultBgColor: #212529;
 $linkActiveColor: #004080;
+$maroonColor: #999999;
 $linkHoverColor: black;
-$maroonColor: #8e0629;
 
 $screen-xs-max: 767px;
 $screen-sm-min: 768px;
