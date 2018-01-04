@@ -22,8 +22,8 @@ export default class ShortAnswer extends React.Component {
     const { question } = this.props;
 
     return (
-      <div className="panel panel-primary" ref={ref => {this.refDiv = ref;}}>
-        <div className="panel-heading">{question}</div>
+      <div className="panel panel-capollsters" ref={ref => {this.refDiv = ref;}}>
+        <div className="panel-heading"><strong><span className="glyphicon glyphicon-arrow-right" aria-hidden="true" /> {question}</strong></div>
         <div className="panel-body">
           <input type="text" className="form-control" />
         </div>

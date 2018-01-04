@@ -13,52 +13,34 @@ a{
 // LVHA
 a:link, a:visited, a:hover, a:active, a:focus{color: $linkActiveColor;}
 
+.form-control:focus{
+	border-color: $defaultBgColor;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(245,245,245,.6);
+}
+
 .ellipsis{
 	text-overflow:ellipsis;
 	overflow:hidden;
 	white-space:nowrap;
 }
 
-// Intrinsic Ratio Component
-.intrinsic {
-  // Make sure <picture> is set to block;
-  // Width is governed by parentNode
-  display: block;
+.panel-capollsters{
+	border-color: $defaultBgColor;
+	.panel-heading {
+		color: white;
+		font-size: 16px;
+    background-color: $defaultBgColor;
+    border-color: $defaultBgColor;
+	}
+	.list-group{
+		.list-group-item.active,
+		.list-group-item.active:focus,
+		.list-group-item.active:hover{
+			background-color: #999;
+			border-color: #999;
+		}
+	}
 
-  // Intrinsic Ratio Box
-  position: relative;
-  height: 0;
-  width: 100%;
-  padding-top: 100%; // Default to square
-
-  // Custom Styling
-  background: #f0f0f0;
-
-  // Some ratios; 1:1, 4:3, 16:9
-  &.intrinsic--square {
-    padding-top: 100%;
-  }
-
-  &.intrinsic--4x3 {
-    padding-top: 75%;
-  }
-
-  &.intrinsic--16x9 {
-    padding-top: 56.25%
-  }
-
-  &.intrinsic--9x16 {
-    padding-top: 156.25%
-  }
-
-  // Force the item to fill the space.
-  .intrinsic-item {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
 }
 
 .btn-pigment {

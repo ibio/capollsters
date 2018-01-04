@@ -70,10 +70,10 @@ export default class Incompleted extends React.Component{
 		    <div className="container incompletedpage">
 					<div className="row">
 						<div className="col-md-12">
-							<div className="jumbotron">
+							<div className="jumbotron poll-head">
 								<h1>{this.state.title}</h1>
 								<p>{this.state.description}</p>
-								<p><a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+								<div className="poll-bg" />
 							</div>
 						</div>
 					</div>

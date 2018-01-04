@@ -1,0 +1,77 @@
+{
+   "id":"12jadikf0293",
+   "title":"ExampleSurvey",
+   "description":"This is an example survey for testing",
+   "questions":[
+      {
+         "id":"290",
+         "text":"What is your favorite place?",
+         "response":null
+      },
+      {
+         "id":"268",
+         "text":"What is the name of your first pet?",
+         "response":null
+      },
+      {
+         "id":"292",
+         "text":"Which is your favorite color",
+         "options":[
+            {
+               "id":null,
+               "text":"Blue",
+               "isSelected":false
+            },
+            {
+               "id":null,
+               "text":"Red",
+               "isSelected":false
+            },
+            {
+               "id":null,
+               "text":"Black",
+               "isSelected":false
+            },
+            {
+               "id":null,
+               "text":"Green",
+               "isSelected":false
+            }
+         ],
+         "response":null
+      },
+      {
+         "id":"952",
+         "text":"Which number is greater than 5?",
+         "options":[
+            {
+               "id":null,
+               "text":"1",
+               "isSelected":false
+            },
+            {
+               "id":null,
+               "text":"2",
+               "isSelected":false
+            },
+            {
+               "id":null,
+               "text":"3",
+               "isSelected":false
+            },
+            {
+               "id":null,
+               "text":"6",
+               "isSelected":false
+            }
+         ],
+         "response":null
+      },
+      {
+         "id":"594",
+         "text":"If you could have anything in the world what would it be?",
+         "response":null
+      }
+   ],
+   "isDisplayed":true
+}

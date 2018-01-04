@@ -33,16 +33,16 @@ export default class MultipleChoice extends React.Component {
   render() {
     const { question, answers } = this.props;
     return (
-      <div className="panel panel-primary" ref={ref => {this.refDiv = ref;}}>
-        <div className="panel-heading">{question}</div>
+      <div className="panel panel-capollsters" ref={ref => {this.refDiv = ref;}}>
+        <div className="panel-heading"><strong><span className="glyphicon glyphicon-arrow-right" aria-hidden="true" /> {question}</strong></div>
         <div className="panel-body">
-          <ul className="list-group">
+          <div className="list-group">
             {
               _.map(answers, (answer, index) => {
-                return <li key={index} className="list-group-item" onClick={this.handleSelected}>{answer.text}</li>;
+                return <a key={index} className="list-group-item" href="javascript:void(0);" onClick={this.handleSelected}>{answer.text}</a>;
               })
             }
-          </ul>
+          </div>
         </div>
         <div className="panel-footer"></div>
       </div>
