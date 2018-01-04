@@ -18,6 +18,14 @@
         content: ' \25CF';
         font-size: 50px;
       }
+      span{
+        position: absolute;
+        left: 0;
+        top: 30px;
+        text-align: center;
+        width: 30px;
+        color: $defaultBgColor;
+      }
     }
     .current-dot{
       color: #fec503;

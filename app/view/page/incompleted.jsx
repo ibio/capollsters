@@ -54,18 +54,19 @@ export default class Incompleted extends React.Component{
 
 	render(){
 		const questionList = this.state.questionsList.map((value, index) => {
+			const numberedQuestion = (index + 1) + ' ' + value.text;
 			let questionView;
 			if(value.options && value.options.length){
-				questionView = <MultipleChoice key={index} data-id={value.id} question={value.text} answers={value.options} ref={ref => {this.panelList.push(ref);}} />;
+				questionView = <MultipleChoice key={index} data-id={value.id} question={numberedQuestion} answers={value.options} ref={ref => {this.panelList.push(ref);}} />;
 			}else{
-				questionView = <ShortAnswer key={index} question={"What is your favorite animal?"} ref={ref => {this.panelList.push(ref);}} />;
+				questionView = <ShortAnswer key={index} question={numberedQuestion} ref={ref => {this.panelList.push(ref);}} />;
 			}
 			return questionView;
 		});
 		return(
 			<div>
 				<Header>
-					<ProgressBar questions={[1,2,3,4,5,6]} length={400} currentIndex={this.state.progressIndex} handleCallback={index => {this.handleProgressClickCallback(index)}} />
+					<ProgressBar questions={this.state.questionsList} length={600} currentIndex={this.state.progressIndex} handleCallback={index => {this.handleProgressClickCallback(index)}} />
 				</Header>
 		    <div className="container incompletedpage">
 					<div className="row">

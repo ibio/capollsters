@@ -20,7 +20,7 @@ export default function ProgressBar(props) {
         className={Classnames({'current-dot': index === props.currentIndex})}
         style={{left: `${percent - 13}px`}}
         onClick={e => {props.handleCallback && props.handleCallback(index, e);}}
-      />
+      ><span>{index + 1}</span></li>
     );
   });
   return (
