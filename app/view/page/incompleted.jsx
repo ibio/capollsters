@@ -58,7 +58,7 @@ export default class Incompleted extends React.Component{
 			if(value.options && value.options.length){
 				questionView = <MultipleChoice key={index} data-id={value.id} question={value.text} answers={value.options} ref={ref => {this.panelList.push(ref);}} />;
 			}else{
-				questionView = <ShortAnswer key={index} question={"What is your favorite animal?"} ref={ref => {this.panelList.push(ref);}} />;
+				questionView = <ShortAnswer key={index} question={value.text} ref={ref => {this.panelList.push(ref);}} />;
 			}
 			return questionView;
 		});
