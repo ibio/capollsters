@@ -43,31 +43,27 @@ a:link, a:visited, a:hover, a:active, a:focus{color: $linkActiveColor;}
 
 }
 
-.btn-pigment {
-  background-color: #990033;
-  color: white;
-  border-radius: 0;
-  &:visited, &:link, &:active, &:focus {
-    background-color: #990033;
-    color: white;
-  }
-  &:hover {
-    color: $linkBgColor;
-  }
-}
-
 .btn-round {
   padding: 8px 20px;
   color: white;
   border-radius: 20px;
   background: $linkBgColor;
   &:visited, &:link, &:active, &:focus {
-    background-color: #linkBgColor;
     color: $linkDefaultColor;
   }
   &:hover {
     color: $linkBgColor;
     background: unset;
+  }
+}
+
+
+
+.btn-pigment {
+  background-color: $defaultBgColor;
+  color: $linkDefaultColor;
+  &:hover {
+    color: $defaultBgColor;
   }
 }
 
