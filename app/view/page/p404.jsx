@@ -18,7 +18,7 @@ export default function P404(props) {
 
 			<div className="row p404-operate">
 				<div className="col-sm-12 text-center">
-					<a className="btn-round" href="/#/main" role="button">Take Me Home</a>
+					<a className="btn-round" href="#/main" role="button">Take Me Home</a>
 				</div>
 			</div>
 	  </div>
