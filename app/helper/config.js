@@ -3,6 +3,8 @@ import _ from 'lodash';
 //output
 var data = {};
 
+data.TEST_MODE = document.location.pathname === '/capollsters' && document.location.origin == 'https://ibio.github.io';
+
 data.ROOT = '';
 data.STATIC_ROOT = '/';
 data.HOST = document.location.origin + '/';

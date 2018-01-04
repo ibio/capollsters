@@ -23,23 +23,22 @@ function init(debug) {
 function render() {
 	let path = document.location.hash.split('/')[1] || '';
 	let node = null;
-	let navObj, searchMode;
-	// console.log(document.location.href);
-	if(document.location.pathname === '/'){
-		navObj = Util.getReportNav(path + '/');
-		searchMode = (navObj.navs[0] === Config.NAV_SEARCH);
+	// let navObj, searchMode;
+	if(document.location.pathname === '/' || Config.TEST_MODE){
+		// navObj = Util.getReportNav(path + '/');
+		// searchMode = (navObj.navs[0] === Config.NAV_SEARCH);
 		switch(path){
 			case Config.NAV_MAIN:
 				document.title = 'Main';
-				node = <Main title={document.title} navs={navObj.navs} nid={navObj.nid} searchMode={searchMode} />;
+				node = <Main title={document.title} />;
 				break;
 			case Config.NAV_INCOMPLETED:
 					document.title = 'Incompleted';
-					node = <Incompleted title={document.title} navs={navObj.navs} nid={navObj.nid} searchMode={searchMode} />;
+					node = <Incompleted title={document.title} />;
 					break;
       case Config.NAV_COMPLETED:
           document.title = 'Completed';
-          node = <Completed title={document.title} navs={navObj.navs} nid={navObj.nid} searchMode={searchMode} />;
+          node = <Completed title={document.title} />;
           break;
 			default:
 				document.title = 'Page Not Found - 404';
