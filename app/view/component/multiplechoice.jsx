@@ -14,6 +14,9 @@ import Style from 'style/component/progressbar.scss';
 export default class MultipleChoice extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+       currentAnswer: false,
+    };
   };
 
   handleSelected(event) {
@@ -23,6 +26,7 @@ export default class MultipleChoice extends React.Component {
       child.classList.remove('active');
     });
     event.target.classList.add('active');
+    this.setState({currentAnswer: event.currentTarget.innerHTML});
   };
 
   // for parent to call
@@ -32,6 +36,7 @@ export default class MultipleChoice extends React.Component {
 
   render() {
     const { question, answers } = this.props;
+    const { currentAnswer } = this.state;
     return (
       <div className="panel panel-capollsters" ref={ref => {this.refDiv = ref;}}>
         <div className="panel-heading"><strong><span className="glyphicon glyphicon-arrow-right" aria-hidden="true" /> {question}</strong></div>
@@ -39,12 +44,14 @@ export default class MultipleChoice extends React.Component {
           <div className="list-group">
             {
               _.map(answers, (answer, index) => {
-                return <a key={index} className="list-group-item" href="javascript:void(0);" onClick={this.handleSelected}>{answer.text}</a>;
+                return <a key={index} className="list-group-item" href="javascript:void(0);" onClick={(clickEvent) => this.handleSelected(clickEvent)}>{answer.text}</a>;
               })
             }
           </div>
         </div>
-        <div className="panel-footer"></div>
+        <div className="panel-footer">
+          {currentAnswer ? `You answered: "${currentAnswer}"`: ''}
+        </div>
       </div>
     );
   };

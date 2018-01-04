@@ -12,7 +12,14 @@ import Style from 'style/component/progressbar.scss';
 export default class ShortAnswer extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+      currentAnswer: '',
+    }
   };
+
+  inputHandler(event) {
+    this.setState({ currentAnswer: event.target.value });
+  }
 
   getBoundingClientRect(){
     return this.refDiv.getBoundingClientRect();
@@ -20,14 +27,16 @@ export default class ShortAnswer extends React.Component {
 
   render() {
     const { question } = this.props;
-
+    const { currentAnswer } = this.state;
     return (
       <div className="panel panel-capollsters" ref={ref => {this.refDiv = ref;}}>
         <div className="panel-heading"><strong><span className="glyphicon glyphicon-arrow-right" aria-hidden="true" /> {question}</strong></div>
         <div className="panel-body">
-          <input type="text" className="form-control" />
+          <input type="text" className="form-control" onChange={(changeEvent) => this.inputHandler(changeEvent)} />
         </div>
-        <div className="panel-footer">Panel footer</div>
+        <div className="panel-footer">
+          {currentAnswer ? `You answered: "${currentAnswer}"`: ''}
+        </div>
       </div>
     );
   };
