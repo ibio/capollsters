@@ -45,10 +45,7 @@ function render() {
 				node = <P404 title={document.title} />;
 		}
 	}else{
-		// document.location.href = document.location.origin;
-		console.log('Config.TEST_MODE', Config.TEST_MODE);
-		console.log('document.location.pathname', document.location.pathname);
-		console.log('document.location.origin', document.location.origin);
+		document.location.href = document.location.origin;
 	}
 	//
 	if(node){
