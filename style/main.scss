@@ -4,6 +4,12 @@
 body{
 	color: $defaultTextColor;
 	font-family: 'Raleway', sans-serif;
+	background-image: url($root-path + 'theme_brick.jpg');
+	background-size: cover; background-position: left top;
+	min-height: 630px;
+	min-width: 1020px;
+	height: 100%;
+	width: 100%;
 }
 
 a{
@@ -52,7 +58,7 @@ a:link, a:visited, a:hover, a:active, a:focus{color: $linkActiveColor;}
     color: $linkDefaultColor;
   }
   &:hover {
-    color: $linkBgColor;
+    color: $linkDefaultColor;
     background: unset;
   }
 }
@@ -63,7 +69,7 @@ a:link, a:visited, a:hover, a:active, a:focus{color: $linkActiveColor;}
   background-color: $defaultBgColor;
   color: $linkDefaultColor;
   &:hover {
-    color: $defaultBgColor;
+    color: $linkDefaultColor;
   }
 }
 
