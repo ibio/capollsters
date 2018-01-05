@@ -16,6 +16,7 @@ data.DIR_RULE = '#';
 data.NAV_DEFAULT = '';
 data.NAV_INCOMPLETED = 'incompleted';
 data.NAV_COMPLETED = 'completed';
+data.NAV_CREATE_POLL = 'createpoll';
 
 
 data.SEARCH_SPLITOR = '+';

@@ -8,6 +8,7 @@ import Util from   'helper/util';
 import Home from 'view/page/home';
 import Incompleted from 'view/page/incompleted';
 import Completed from 'view/page/completed';
+import CreatePoll from 'view/page/createpoll';
 import P404 from 'view/page/p404';
 
 let _router;
@@ -39,6 +40,10 @@ function render() {
       case Config.NAV_COMPLETED:
           document.title = 'Completed';
           node = <Completed title={document.title} />;
+          break;
+      case Config.NAV_CREATE_POLL:
+          document.title = 'Create New Poll';
+          node = <CreatePoll title={document.title} />;
           break;
 			default:
 				document.title = 'Page Not Found - 404';
