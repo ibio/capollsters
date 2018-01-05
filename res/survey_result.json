@@ -24,8 +24,8 @@
          "questionText":"What number is greater than 5?",
          "results":{  
             "1":1,
-            "2":0,
-            "3":0,
+            "2":3,
+            "3":7,
             "6":14
          }
       },
