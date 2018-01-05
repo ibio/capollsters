@@ -52,8 +52,6 @@ export default class Result extends React.Component{
 		      <div className="row">
 						<div className="col-md-12">
 							{questionList}
-							<hr />
-							<p className="text-center"><a className="btn-round btn-pigment btn-lg" href="#/main">Submit</a></p>
 						</div>
 		      </div>
 		    </div>
