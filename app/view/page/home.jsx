@@ -25,7 +25,7 @@ export default class Home extends React.Component{
 							<div className="list-group">
 								<a className="list-group-item" href="#/completed" >Completed</a>
 								<a className="list-group-item" href="#/incompleted" >Saved</a>
-								<a className="list-group-item" href="#/createnew" >Create New</a>
+								<a className="list-group-item" href="#/createpoll" >Create New</a>
 							</div>
 						</div>
 		      </div>
