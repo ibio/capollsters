@@ -25,6 +25,16 @@ export default function(props){
 					</div>
 				</div>
 
+				<div className="message-box">
+					<div className="messagebox-text">
+						<h4>Hey, you're back!</h4>
+						<section className="messagebox-text-section">Let's get started the poll.</section>
+					</div>
+				</div>
+
+				<div className="ca-robot">
+					<img src="res/victor.png" alt="Victor" />
+				</div>
 	    </div>
 	  </div>
 	);

@@ -2,7 +2,7 @@
 @import 'global';
 
 .teacherhomepage{
-	margin-top: 120px;
+	margin-top: 210px;
 
 	.menu-box{
 		color: white;
@@ -29,6 +29,32 @@
 		}
 		&:hover{
 			transform: scale(1.05);
+		}
+	}
+
+	.message-box{
+		position: fixed;
+		height: 150px;
+		width: 464px;
+		bottom: 25px;
+		left: 350px;
+		border-radius: 74px;
+		background: white;
+		padding: 20px 50px;
+		.messagebox-text{
+			h4{margin-top: 30px; color: black; }
+		}
+	}
+
+	.ca-robot{
+		position: fixed;
+		bottom: 0px;
+		right: 200px;
+		width: 300px;
+		img{
+			height:190px;
+			bottom: 0px;
+			position: absolute;
 		}
 	}
 }

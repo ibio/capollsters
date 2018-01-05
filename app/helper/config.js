@@ -6,12 +6,11 @@ var data = {};
 // for git repo test only
 data.TEST_MODE = true && document.location.origin == 'https://ibio.github.io';
 
-data.ROOT = '';
-data.STATIC_ROOT = '/';
+data.ROOT = caInfo.root;
 data.HOST = document.location.origin + '/';
 //
-data.URL_SURVEY = data.ROOT === '' ? 'res/survey_item.json' : data.ROOT + 'survey?id=100';
-data.URL_RESULT = data.ROOT === '' ? 'res/survey_result.json' : data.ROOT + 'result?id=100';
+data.URL_SURVEY = data.ROOT === '' ? 'res/survey_item.json' : data.ROOT + '?id=100';
+data.URL_RESULT = data.ROOT === '' ? 'res/survey_result.json' : data.ROOT + '?id=100';
 
 data.DIR_RULE = '#';
 data.NAV_DEFAULT = '';
