@@ -24,11 +24,12 @@
         top: 30px;
         text-align: center;
         width: 30px;
-        color: $defaultBgColor;
+        color: $defaultTitleColor;
       }
     }
     .current-dot{
-      color: #fec503;
+      color: $defaultTitleColor;
+      span{color: white;}
     }
   }
   .progressbackground{
@@ -37,7 +38,7 @@
     top: 10px;
     width: 100%;
     height: 4px;
-    background-color: #fec503;
+    background-color: $defaultTitleColor;
   }
 }
 

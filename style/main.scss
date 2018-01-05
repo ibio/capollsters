@@ -25,12 +25,12 @@ a:link, a:visited, a:hover, a:active, a:focus{color: $linkActiveColor;}
 }
 
 .panel-capollsters{
-	border-color: $defaultBgColor;
+	border-color: $defaultTitleColor;
 	.panel-heading {
 		color: white;
 		font-size: 16px;
-    background-color: $defaultBgColor;
-    border-color: $defaultBgColor;
+    background-color: $defaultTitleColor;
+    border-color: $defaultTitleColor;
 	}
 	.list-group{
 		.list-group-item.active,

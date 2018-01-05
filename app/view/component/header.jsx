@@ -11,14 +11,14 @@ export default function Header(props) {
         <div className="row header-main">
           <div className="col-md-2 col-xs-12 nav-brand">
             <a className="nav-logo" href='#/'>
-              CA Pollsters
+              <img src="res/header_iready_logo.png" />
             </a>
           </div>
           <div className="col-md-6 col-xs-12 nav-progress">
             {props.children}
           </div>
           <div className="col-md-4 col-xs-12 nav-info">
-
+            CA Pollsters
           </div>
         </div>
       </div>
