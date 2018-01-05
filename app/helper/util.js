@@ -105,11 +105,13 @@ export default class Util{
     return result;
   };
 
-  static getReportNav(splitor){
+  static getNav(splitor){
     var str = document.location.hash.split(splitor)[1] || '';
     var navs, nid;
     str = str.split(':') || [''];
     navs = str[0].split('/');
+    // remove the first empty one
+    navs.shift();
     nid = str[1];
     return {navs, nid};
   }

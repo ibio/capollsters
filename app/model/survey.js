@@ -9,15 +9,28 @@ export default class SurveyModel extends ProxyModel{
 		super();
 		this.title = '';
 		this.description = '';
-		this.questionList = [];
+		this.surveyQuestionList = [];
+		this.resultQuestionList = [];
 	}
 
-	fetch(id, silent, callback, scope){
+	fetchSurvey(id, silent, callback, scope){
 		var self = this;
 		$.get(Config.URL_SURVEY + '?id=' + id, function(response) {
 			self.title = response.title;
 			self.description = response.description;
-			self.questionList = response.questions;
+			self.surveyQuestionList = response.questions;
+			//save to local
+			if(!silent){
+				self.notify();
+			}
+			callback && callback.call(scope);
+		})
+	}
+
+	fetchResult(id, silent, callback, scope){
+		var self = this;
+		$.get(Config.URL_RESULT + '?id=' + id, function(response) {
+			self.resultQuestionList = response.questionResults;
 			//save to local
 			if(!silent){
 				self.notify();

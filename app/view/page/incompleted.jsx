@@ -18,10 +18,11 @@ export default class Incompleted extends React.Component{
 		this.panelList = [];
     this._model = new SurveyModel();
     this._model.subscribe(() => {
-				this.setState({title : this._model.title,
-				description : this._model.description,
-				questionsList: this._model.questionList
-			});
+				this.setState({
+					title : this._model.title,
+					description : this._model.description,
+					questionsList: this._model.surveyQuestionList
+				});
 		});
 
 		this.state = {
@@ -32,7 +33,7 @@ export default class Incompleted extends React.Component{
 
 	componentDidMount(){
 		// console.log(this.props.navs[0]);
-		this._model.fetch();
+		this._model.fetchSurvey();
 		window.addEventListener('scroll', e => {this.handleWindowScroll(e);});
 	}
 
