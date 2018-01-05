@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {TweenLite, Power2} from 'gsap';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import SurveyModel from 'model/survey';

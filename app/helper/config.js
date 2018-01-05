@@ -13,7 +13,7 @@ data.HOST = document.location.origin + '/';
 data.URL_SURVEY = data.ROOT === '' ? 'res/survey.json' : data.ROOT + 'survey?id=100';
 
 data.DIR_RULE = '#';
-data.NAV_MAIN = 'main';
+data.NAV_DEFAULT = '';
 data.NAV_INCOMPLETED = 'incompleted';
 data.NAV_COMPLETED = 'completed';
 

@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import {Router} from 'director/build/director';
 import Config from  'helper/config';
 import Util from   'helper/util';
-import Main from 'view/page/main';
+import Home from 'view/page/home';
 import Incompleted from 'view/page/incompleted';
 import Completed from 'view/page/completed';
 import P404 from 'view/page/p404';
@@ -28,9 +28,9 @@ function render() {
 		// navObj = Util.getReportNav(path + '/');
 		// searchMode = (navObj.navs[0] === Config.NAV_SEARCH);
 		switch(path){
-			case Config.NAV_MAIN:
-				document.title = 'Main';
-				node = <Main title={document.title} />;
+			case Config.NAV_DEFAULT:
+				document.title = 'Home';
+				node = <Home title={document.title} />;
 				break;
 			case Config.NAV_INCOMPLETED:
 					document.title = 'Incompleted';

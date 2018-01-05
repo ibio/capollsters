@@ -9,7 +9,7 @@ export default function Header(props) {
       <div className="container-fluid">
         <div className="row header-main">
           <div className="col-md-2 col-xs-12 nav-brand">
-            <a className="nav-logo" href='#/main'>
+            <a className="nav-logo" href='#/'>
               CA Pollsters
             </a>
           </div>
