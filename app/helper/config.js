@@ -10,10 +10,12 @@ data.ROOT = '';
 data.STATIC_ROOT = '/';
 data.HOST = document.location.origin + '/';
 //
-data.URL_SURVEY = data.ROOT === '' ? 'res/survey.json' : data.ROOT + 'survey?id=100';
+data.URL_SURVEY = data.ROOT === '' ? 'res/survey_item.json' : data.ROOT + 'survey?id=100';
+data.URL_RESULT = data.ROOT === '' ? 'res/survey_result.json' : data.ROOT + 'result?id=100';
 
 data.DIR_RULE = '#';
 data.NAV_DEFAULT = '';
+data.NAV_RESULT = 'result';
 data.NAV_INCOMPLETED = 'incompleted';
 data.NAV_COMPLETED = 'completed';
 

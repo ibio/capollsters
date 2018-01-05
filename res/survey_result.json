@@ -1,0 +1,42 @@
+{  
+   "surveyId":"Example Survey",
+   "questionResults":[  
+      {  
+         "questionText":"What is your favorite place?",
+         "results":[  
+            "London",
+            "Paris",
+            "Germany",
+            "Boston",
+            "The toilet"
+         ]
+      },
+      {  
+         "questionText":"What is the name of your first pet?",
+         "results":[  
+            "Dog",
+            "Ralph",
+            "Christine",
+            "Blob"
+         ]
+      },
+      {  
+         "questionText":"What number is greater than 5?",
+         "results":{  
+            "1":1,
+            "2":0,
+            "3":0,
+            "6":14
+         }
+      },
+      {  
+         "questionText":"If you could have anything in the world what would you have?",
+         "results":[  
+            "Gold",
+            "Nerf Gun",
+            "TV",
+            "Electricity"
+         ]
+      }
+   ]
+}

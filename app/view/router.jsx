@@ -8,6 +8,7 @@ import Util from   'helper/util';
 import Home from 'view/page/home';
 import Incompleted from 'view/page/incompleted';
 import Completed from 'view/page/completed';
+import Result from 'view/page/result';
 import P404 from 'view/page/p404';
 
 let _router;
@@ -22,10 +23,11 @@ function init(debug) {
 
 function render() {
 	let path = document.location.hash.split('/')[1] || '';
+	let navObj = {};
 	let node = null;
 	// let navObj, searchMode;
 	if(document.location.pathname === '/' || Config.TEST_MODE){
-		// navObj = Util.getReportNav(path + '/');
+		navObj = Util.getNav(Config.DIR_RULE);
 		// searchMode = (navObj.navs[0] === Config.NAV_SEARCH);
 		switch(path){
 			case Config.NAV_DEFAULT:
@@ -39,6 +41,10 @@ function render() {
       case Config.NAV_COMPLETED:
           document.title = 'Completed';
           node = <Completed title={document.title} />;
+          break;
+			case Config.NAV_RESULT:
+          document.title = 'Result';
+          node = <Result title={document.title} navs={navObj.navs} nid={navObj.nid} />;
           break;
 			default:
 				document.title = 'Page Not Found - 404';
