@@ -46,6 +46,7 @@ function render() {
       case Config.NAV_CREATE_POLL:
           document.title = 'Create New Poll';
           node = <CreatePoll title={document.title} />;
+          break;
 			case Config.NAV_RESULT:
           document.title = 'Result';
           node = <Result title={document.title} navs={navObj.navs} nid={navObj.nid} />;
