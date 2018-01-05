@@ -35,7 +35,6 @@ export default class QuestionCreator extends React.Component {
         };
       }
     });
-    console.log(values);
     return values;
   }
 
@@ -74,7 +73,7 @@ export default class QuestionCreator extends React.Component {
           </div>
         </div>
         <div className="panel-heading">
-          Question Text: <input style={{color: 'black'}} value={this.state.questionText} onChange={(evt) => {this.setState({questionText: evt.target.value})}} autoFocus />
+          Question Text: <input style={{color: 'black', width: '50%'}} value={this.state.questionText} onChange={(evt) => {this.setState({questionText: evt.target.value})}} autoFocus />
         </div>
         <div className="panel-body">
           <div className="list-group">

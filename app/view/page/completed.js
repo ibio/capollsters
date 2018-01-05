@@ -7,21 +7,6 @@ import Style from 'style/incompletedpage.scss';
 export default class Completed extends React.Component{
   constructor(props){
     super(props);
-    
-    this.state = {
-      title : null,
-      content : null,
-      surveys: [
-        {
-          question: 'hello world',
-          answers: ['a: hi', 'b: hello', 'c: sup']
-        },
-        {
-          question: 'pizza?',
-          answers: []
-        }
-      ]
-    };
   }
 
   render(){

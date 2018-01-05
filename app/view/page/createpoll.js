@@ -6,7 +6,6 @@ import SurveyModel from 'model/survey';
 import Config from 'helper/config';
 import Header from 'view/component/header';
 import MultipleChoice from 'view/component/multiplechoice';
-import ProgressBar from 'view/component/progressbar';
 import ShortAnswer from 'view/component/shortanswer';
 import QuestionCreator from 'view/component/questioncreator';
 import Style from 'style/incompletedpage.scss';
@@ -20,29 +19,8 @@ export default class CreatePoll extends React.Component{
     this.panelList = [];
 
     this.state = {
-      progressIndex : -1,
       questionsList : []
     };
-  }
-
-  componentDidMount(){
-    // console.log(this.props.navs[0]);
-    window.addEventListener('scroll', e => {this.handleWindowScroll(e);});
-  }
-
-  handleWindowScroll(index){
-    // const y = window.scrollY;
-    // console.log(index);
-  }
-
-  handleProgressClickCallback(index){
-    const panel = this.panelList[index];
-    if(panel){
-      const rect = panel.getBoundingClientRect();
-      const y = rect.top + window.scrollY - HEADER_H;
-      // window.scrollTo(0, y);
-      TweenLite.to(window, SCROLL_EASE_INTERVAL, {scrollTo:y, ease: Power2.easeOut, callback:()=>{this.setState({progressIndex:index});}});
-    }
   }
 
   handleCreateQuestion(questionText, questionOptions) {
@@ -56,7 +34,6 @@ export default class CreatePoll extends React.Component{
   }
 
   render(){
-    console.log(this.state);
     const questionList = this.state.questionsList.map((value, index) => {
       const numberedQuestion = (index + 1) + ' ' + value.text;
       let questionView;
@@ -69,15 +46,13 @@ export default class CreatePoll extends React.Component{
     });
     return(
       <div>
-        <Header>
-          <ProgressBar questions={[1,2,3,4,5,6]} length={400} currentIndex={this.state.progressIndex} handleCallback={index => {this.handleProgressClickCallback(index)}} />
-        </Header>
+        <Header />
         <div className="container incompletedpage">
           <div className="row">
             <div className="col-md-12">
               <div className="jumbotron poll-head">
-                <h1>{this.state.title}</h1>
-                <p>{this.state.description}</p>
+                <h1>Create a New Poll</h1>
+                <p>Preview the poll as you create it</p>
                 <div className="poll-bg" />
               </div>
             </div>
@@ -88,7 +63,7 @@ export default class CreatePoll extends React.Component{
               <hr />
               {questionList}
               <hr />
-              <p className="text-center"><a className="btn-round btn-pigment btn-lg" href="#/main">Create This Poll</a></p>
+              <p className="text-center"><a className="btn-round btn-pigment btn-lg" href="#/">Create This Poll</a></p>
             </div>
           </div>
         </div>

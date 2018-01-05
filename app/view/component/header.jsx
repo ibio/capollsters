@@ -17,15 +17,14 @@ export default function Header(props) {
             {props.children}
           </div>
           <div className="col-md-4 col-xs-12 nav-info">
-            <a className="btn-round" href="">Button 1</a>
-            <a href="" target="_self" >Button 2</a>
+            <a className="btn-round" href="#/incompleted">Completed</a>
+            <a className="btn-round" href="#/createpoll">Create New</a>
           </div>
         </div>
         {props.useHeadMenu &&
           <div className="row header-menu">
             <div className="col-md-3"></div>
             <div className="col-md-9">
-
             </div>
           </div>
         }
