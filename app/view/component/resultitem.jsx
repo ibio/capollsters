@@ -27,6 +27,7 @@ export default class ResultItem extends React.Component {
       });
       resultsView = (<div className="list-group">{listView}</div>);
     }else{
+      // http://recharts.org/#/en-US/api/BarChart
       // [{ name: 'a', value: [5,8] }, { name: 'b', value: 12 }];
       const data = _.map(answers, (answer, index) => ({name:index, students:answer}));
       resultsView = (
