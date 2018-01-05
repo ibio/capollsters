@@ -5,7 +5,8 @@ import ReactDOM from 'react-dom';
 import {Router} from 'director/build/director';
 import Config from  'helper/config';
 import Util from   'helper/util';
-import Home from 'view/page/home';
+import StudentHome from 'view/page/studenthome';
+import TeacherHome from 'view/page/teacherhome';
 import Incompleted from 'view/page/incompleted';
 import Completed from 'view/page/completed';
 import CreatePoll from 'view/page/createpoll';
@@ -23,7 +24,7 @@ function init(debug) {
 }
 
 function render() {
-	let path = document.location.hash.split('/')[1] || '';
+	let path = document.location.hash.split(Config.DIR_RULE + '/')[1] || '';
 	let navObj = {};
 	let node = null;
 	// let navObj, searchMode;
@@ -31,26 +32,39 @@ function render() {
 		navObj = Util.getNav(Config.DIR_RULE);
 		// searchMode = (navObj.navs[0] === Config.NAV_SEARCH);
 		switch(path){
-			case Config.NAV_DEFAULT:
-				document.title = 'Home';
-				node = <Home title={document.title} />;
+			case Config.NAV_STUDENT:
+				document.title = 'Student Home';
+				node = <StudentHome title={document.title} />;
 				break;
-			case Config.NAV_INCOMPLETED:
-					document.title = 'Incompleted';
+			case Config.NAV_STUDENT_POLL:
+					document.title = 'Student Poll';
 					node = <Incompleted title={document.title} />;
 					break;
-      case Config.NAV_COMPLETED:
-          document.title = 'Completed';
+      case Config.NAV_STUDENT_COMPLETED:
+          document.title = 'Student Completed';
           node = <Completed title={document.title} />;
           break;
-      case Config.NAV_CREATE_POLL:
-          document.title = 'Create New Poll';
-          node = <CreatePoll title={document.title} />;
-          break;
-			case Config.NAV_RESULT:
-          document.title = 'Result';
+			case Config.NAV_STUDENT_RESULT:
+          document.title = 'Student Poll Result';
           node = <Result title={document.title} navs={navObj.navs} nid={navObj.nid} />;
           break;
+			case Config.NAV_TEACHER:
+				document.title = 'Teacher Home';
+				node = <TeacherHome title={document.title} />;
+				break;
+				case Config.NAV_TEACHER_COMPLETED:
+						document.title = 'Teacher Completed';
+						node = <Completed title={document.title} />;
+						break;
+				case Config.NAV_TEACHER_RESULT:
+						document.title = 'Teacher Poll Result';
+						node = <Result title={document.title} navs={navObj.navs} nid={navObj.nid} />;
+						break;
+      case Config.NAV_TEACHER_CREATE_POLL:
+          document.title = 'Teacher Create New Poll';
+          node = <CreatePoll title={document.title} />;
+          break;
+
 			default:
 				document.title = 'Page Not Found - 404';
 				node = <P404 title={document.title} />;

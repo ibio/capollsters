@@ -15,10 +15,15 @@ data.URL_RESULT = data.ROOT === '' ? 'res/survey_result.json' : data.ROOT + 'res
 
 data.DIR_RULE = '#';
 data.NAV_DEFAULT = '';
-data.NAV_RESULT = 'result';
-data.NAV_INCOMPLETED = 'incompleted';
-data.NAV_COMPLETED = 'completed';
-data.NAV_CREATE_POLL = 'createpoll';
+
+data.NAV_STUDENT = 'student';
+data.NAV_STUDENT_POLL = 'student/poll';
+data.NAV_STUDENT_COMPLETED = 'student/completed';
+data.NAV_STUDENT_RESULT = 'student/completed/poll';
+data.NAV_TEACHER = 'teacher';
+data.NAV_TEACHER_COMPLETED = 'teacher/completed';
+data.NAV_TEACHER_RESULT = 'teacher/completed/poll';
+data.NAV_TEACHER_CREATE_POLL = 'teacher/createpoll';
 
 
 data.SEARCH_SPLITOR = '+';
