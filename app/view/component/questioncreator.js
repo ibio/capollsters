@@ -2,6 +2,7 @@ import _ from 'lodash';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Config from 'helper/config';
+import Util from 'helper/util';
 import Classnames from 'lib/classnames';
 
 /**
@@ -52,7 +53,7 @@ export default class QuestionCreator extends React.Component {
   createMCOption() {
     const { mcOptions } = this.state;
     const option = (
-      <div>
+      <div key={Util.uuid()}>
         Option Text: <input style={{color: 'black'}} id={this.state.optionRefs.length} ref={ref => {ref? this.setState({optionRefs: [...this.state.optionRefs, ref]}): ''}} autoFocus />
       </div>
     );

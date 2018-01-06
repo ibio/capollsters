@@ -10,14 +10,11 @@ import ShortAnswer from 'view/component/shortanswer';
 import QuestionCreator from 'view/component/questioncreator';
 import Style from 'style/incompletedpage.scss';
 
-const HEADER_H = 80;
-const SCROLL_EASE_INTERVAL = .25;
-
 export default class CreatePoll extends React.Component{
   constructor(props){
     super(props);
     this.panelList = [];
-
+    this._model = new SurveyModel();
     this.state = {
       questionsList : []
     };
@@ -31,6 +28,12 @@ export default class CreatePoll extends React.Component{
       "response": null
     };
     this.setState({ questionsList: [...this.state.questionsList, question]});
+  }
+
+  handleCreatePoll(){
+    this._model.createPoll(this.state.questionsList, () => {
+        console.log('done!');
+    });
   }
 
   render(){
@@ -63,7 +66,7 @@ export default class CreatePoll extends React.Component{
               <hr />
               {questionList}
               <hr />
-              <p className="text-center"><a className="btn-round btn-pigment btn-lg" href="#/">Create This Poll</a></p>
+              <p className="text-center"><a onClick={e => {this.handleCreatePoll(e)}} className="btn-round btn-pigment btn-lg" href="javascript:void(0);">Create This Poll</a></p>
             </div>
           </div>
         </div>

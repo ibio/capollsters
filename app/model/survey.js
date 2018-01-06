@@ -15,7 +15,7 @@ export default class SurveyModel extends ProxyModel{
 
 	fetchSurvey(id, silent, callback, scope){
 		var self = this;
-		$.get(Config.URL_SURVEY + '?id=' + id, function(response) {
+		this.get(Config.URL_SURVEY + '?id=' + id, null, function(response) {
 			self.title = response.title;
 			self.description = response.description;
 			self.surveyQuestionList = response.questions;
@@ -29,7 +29,7 @@ export default class SurveyModel extends ProxyModel{
 
 	fetchResult(id, silent, callback, scope){
 		var self = this;
-		$.get(Config.URL_RESULT + '?id=' + id, function(response) {
+		this.get(Config.URL_RESULT + '?id=' + id, null, function(response) {
 			self.resultQuestionList = response.questionResults;
 			//save to local
 			if(!silent){
@@ -37,6 +37,37 @@ export default class SurveyModel extends ProxyModel{
 			}
 			callback && callback.call(scope);
 		})
+	}
+
+	createPoll(list, silent, callback, scope){
+		console.log('list', list);
+		const questions = list.map(value => {
+			const question = {};
+			question.text = value.text;
+			if(value.options && value.options.length){
+				question.type = 'SINGLE_CHOICE';
+				question.options = value.options.map(option => ({text:option.text}));
+			}else{
+				question.type = 'OPEN_RESPONSE';
+				question.options = [];
+			}
+			return question;
+		});
+		const data = {
+			owner: null,
+			isDisplayed: true,
+			title: 'Example Survey',
+			description: 'Example Survey Description',
+			description: 'Example Survey Description',
+			expires: null,
+			expires: null,
+			createdOn: null,
+			questions
+		};
+		console.log('data', data);
+		this.post(Config.URL_CREATE_POLL, {}, null, function(response){
+			callback && callback();
+		});
 	}
 
 	//http://v2.wp-api.org/reference/pages/
