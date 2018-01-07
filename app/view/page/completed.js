@@ -9,6 +9,14 @@ export default class Completed extends React.Component{
   constructor(props){
     super(props);
     this._model = new SurveyModel();
+    this._model.subscribe(() => {
+			this.setState({
+				surveyList: this._model.surveyList
+			});
+		});
+    this.state = {
+			surveyList : []
+		};
   }
 
   componentDidMount(){
@@ -16,6 +24,9 @@ export default class Completed extends React.Component{
   }
 
   render(){
+    const listView = this.state.surveyList.map((value, index) => {
+      return (<li key={index} className="list-group-item"><a href="#">value.title</a></li>);
+    });
     return(
       <div>
         <Header />
@@ -30,13 +41,7 @@ export default class Completed extends React.Component{
 
           <div className="row">
             <div className="col-md-12">
-              <ul className="list-group">
-                <li className="list-group-item">Cras justo odio</li>
-                <li className="list-group-item">Dapibus ac facilisis in</li>
-                <li className="list-group-item">Morbi leo risus</li>
-                <li className="list-group-item">Porta ac consectetur ac</li>
-                <li className="list-group-item">Vestibulum at eros</li>
-              </ul>
+              <ul className="list-group">{listView}</ul>
             </div>
           </div>
         </div>

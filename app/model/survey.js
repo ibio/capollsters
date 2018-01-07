@@ -11,12 +11,14 @@ export default class SurveyModel extends ProxyModel{
 		this.description = '';
 		this.surveyQuestionList = [];
 		this.resultQuestionList = [];
+		this.surveyList = [];
 	}
 
 	fetchAllSurveys(silent, callback, scope){
 		var self = this;
 		this.get(Config.URL_GET_ALL_SURVEY, 'null', function(response){
-			console.log('response', response);
+			// console.log('response', response);
+			self.surveyList = response || [];
 			if(!silent){
 				self.notify();
 			}
