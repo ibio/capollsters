@@ -35,7 +35,7 @@ export default class MultipleChoice extends React.Component {
   }
 
   render() {
-    const { question, answers } = this.props;
+    const { question, answers, deleteCallback } = this.props;
     const { currentAnswer } = this.state;
     return (
       <div className="panel panel-capollsters" ref={ref => {this.refDiv = ref;}}>
@@ -50,7 +50,7 @@ export default class MultipleChoice extends React.Component {
           </div>
         </div>
         <div className="panel-footer">
-          {currentAnswer ? `You answered: "${currentAnswer}"`: ''}
+          {deleteCallback? (<a className="btn-round btn-pigment btn-sm" role="button" onClick={() => deleteCallback(question)}>Delete</a>):currentAnswer ? `You answered: "${currentAnswer}"`: ''}
         </div>
       </div>
     );

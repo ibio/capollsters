@@ -36,14 +36,22 @@ export default class CreatePoll extends React.Component{
     });
   }
 
+  deleteCallback(index) {
+    console.log(index);
+    const { questionsList } = this.state;
+    console.log(questionsList);
+    this.setState({ questionsList: [...questionsList.slice(0,index), ...questionsList.slice(index + 1)]});
+    console.log(this.state.questionsList);
+  }
+
   render(){
     const questionList = this.state.questionsList.map((value, index) => {
       const numberedQuestion = (index + 1) + ' ' + value.text;
       let questionView;
       if(value.options && value.options.length){
-        questionView = <MultipleChoice key={index} data-id={value.id} question={numberedQuestion} answers={value.options} ref={ref => {this.panelList.push(ref);}} />;
+        questionView = <MultipleChoice deleteCallback={() => this.deleteCallback(index)} key={index} data-id={value.id} question={numberedQuestion} answers={value.options} ref={ref => {this.panelList.push(ref);}} />;
       }else{
-        questionView = <ShortAnswer key={index} question={numberedQuestion} ref={ref => {this.panelList.push(ref);}} />;
+        questionView = <ShortAnswer deleteCallback={() => this.deleteCallback(index)} key={index} question={numberedQuestion} ref={ref => {this.panelList.push(ref);}} />;
       }
       return questionView;
     });
@@ -55,7 +63,6 @@ export default class CreatePoll extends React.Component{
             <div className="col-md-12">
               <div className="jumbotron poll-head">
                 <h1>Create a New Poll</h1>
-                <p>Preview the poll as you create it</p>
                 <div className="poll-bg" />
               </div>
             </div>
