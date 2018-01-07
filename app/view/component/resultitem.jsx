@@ -21,7 +21,7 @@ export default class ResultItem extends React.Component {
     const { question, answers, type } = this.props;
     let resultsView;
     //
-    if(type = 'SINGLE_CHOICE'){
+    if(type === 'OPEN_RESPONSE'){
       const listView = _.map(answers, (answer, index) => {
         return <a key={index} className="list-group-item" href="javascript:void(0);">{answer.text}</a>;
       });
@@ -36,7 +36,7 @@ export default class ResultItem extends React.Component {
           <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
-          <Bar dataKey="students" fill="#868e96" />
+          <Bar dataKey="students" fill="#eca148" />
         </BarChart>
       );
     }
