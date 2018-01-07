@@ -36,7 +36,7 @@ export default class Result extends React.Component{
 	render(){
 		const questionList = this.state.questionsList.map((value, index) => {
 			const numberedQuestion = (index + 1) + ' ' + value.text;
-			return <ResultItem key={index} question={numberedQuestion} answers={value.options} />
+			return <ResultItem key={index} question={numberedQuestion} type={value.type} answers={value.options} />
 		});
 		return(
 			<div>

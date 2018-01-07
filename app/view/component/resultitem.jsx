@@ -18,10 +18,10 @@ export default class ResultItem extends React.Component {
   };
 
   render() {
-    const { question, answers } = this.props;
+    const { question, answers, type } = this.props;
     let resultsView;
     //
-    if(_.isArray(answers)){
+    if(type = 'SINGLE_CHOICE'){
       const listView = _.map(answers, (answer, index) => {
         return <a key={index} className="list-group-item" href="javascript:void(0);">{answer.text}</a>;
       });
