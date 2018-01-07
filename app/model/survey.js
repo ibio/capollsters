@@ -41,7 +41,7 @@ export default class SurveyModel extends ProxyModel{
 
 	fetchResult(id, silent, callback, scope){
 		var self = this;
-		this.get(Config.URL_RESULT + '?id=' + id, null, function(response) {
+		this.get(Config.URL_RESULT + '/' + id, null, function(response) {
 			self.resultQuestionList = response.questionResults;
 			//save to local
 			if(!silent){
