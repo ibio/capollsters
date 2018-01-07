@@ -10,7 +10,7 @@ import Style from 'style/component/progressbar.scss';
  * question: text of the question
  * answers: answers to the questions
  * Usage:
- * <ResultItem question={'myQuestionText'} answers=['array', 'of', 'answers'] />
+ * <ResultItem question={'myQuestionText'} answers=[{text:'this is an option'}] />
  */
 export default class ResultItem extends React.Component {
   constructor(props) {
@@ -23,13 +23,13 @@ export default class ResultItem extends React.Component {
     //
     if(_.isArray(answers)){
       const listView = _.map(answers, (answer, index) => {
-        return <a key={index} className="list-group-item" href="javascript:void(0);">{answer}</a>;
+        return <a key={index} className="list-group-item" href="javascript:void(0);">{answer.text}</a>;
       });
       resultsView = (<div className="list-group">{listView}</div>);
     }else{
       // http://recharts.org/#/en-US/api/BarChart
       // [{ name: 'a', value: [5,8] }, { name: 'b', value: 12 }];
-      const data = _.map(answers, (answer, index) => ({name:index, students:answer}));
+      const data = _.map(answers, (answer, index) => ({name:index, students:answer.text}));
       resultsView = (
         <BarChart width={600} height={250} data={data}>
           <CartesianGrid strokeDasharray="3 3" />

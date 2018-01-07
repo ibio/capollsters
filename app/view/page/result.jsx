@@ -28,15 +28,15 @@ export default class Result extends React.Component{
 	}
 
 	componentDidMount(){
-		console.log(this.props.navs[0]);
-		console.log(this.props.nid);
+		// console.log(this.props.navs[0]);
+		// console.log(this.props.nid);
 		this._model.fetchResult(this.props.nid);
 	}
 
 	render(){
 		const questionList = this.state.questionsList.map((value, index) => {
-			const numberedQuestion = (index + 1) + ' ' + value.questionText;
-			return <ResultItem key={index} question={numberedQuestion} answers={value.results} />
+			const numberedQuestion = (index + 1) + ' ' + value.text;
+			return <ResultItem key={index} question={numberedQuestion} answers={value.options} />
 		});
 		return(
 			<div>

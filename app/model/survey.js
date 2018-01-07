@@ -52,7 +52,7 @@ export default class SurveyModel extends ProxyModel{
 	}
 
 	createPoll(list, silent, callback, scope){
-		console.log('list', list);
+		// console.log('list', list);
 		const questions = list.map(value => {
 			const question = {};
 			question.text = value.text;
@@ -70,8 +70,6 @@ export default class SurveyModel extends ProxyModel{
 			isDisplayed: true,
 			title: 'Example Survey',
 			description: 'Example Survey Description',
-			description: 'Example Survey Description',
-			expires: null,
 			expires: null,
 			createdOn: null,
 			questions
