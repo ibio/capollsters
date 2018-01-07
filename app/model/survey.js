@@ -28,7 +28,7 @@ export default class SurveyModel extends ProxyModel{
 
 	fetchSurvey(id, silent, callback, scope){
 		var self = this;
-		this.get(Config.URL_SURVEY + '?id=' + id, null, function(response) {
+		this.get(Config.URL_SURVEY + '/' + id, null, function(response) {
 			self.title = response.title;
 			self.description = response.description;
 			self.surveyQuestionList = response.questions;
