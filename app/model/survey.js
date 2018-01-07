@@ -13,13 +13,23 @@ export default class SurveyModel extends ProxyModel{
 		this.resultQuestionList = [];
 	}
 
+	fetchAllSurveys(silent, callback, scope){
+		var self = this;
+		this.get(Config.URL_GET_ALL_SURVEY, 'null', function(response){
+			console.log('response', response);
+			if(!silent){
+				self.notify();
+			}
+			callback && callback.call(scope);
+		});
+	}
+
 	fetchSurvey(id, silent, callback, scope){
 		var self = this;
 		this.get(Config.URL_SURVEY + '?id=' + id, null, function(response) {
 			self.title = response.title;
 			self.description = response.description;
 			self.surveyQuestionList = response.questions;
-			//save to local
 			if(!silent){
 				self.notify();
 			}
@@ -64,8 +74,7 @@ export default class SurveyModel extends ProxyModel{
 			createdOn: null,
 			questions
 		};
-		console.log('data', data);
-		this.post(Config.URL_CREATE_POLL, {}, null, function(response){
+		this.post(Config.URL_CREATE_POLL, data, null, function(response){
 			callback && callback();
 		});
 	}

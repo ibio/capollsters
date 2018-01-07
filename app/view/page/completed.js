@@ -2,11 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Config from 'helper/config';
 import Header from 'view/component/header';
+import SurveyModel from 'model/survey';
 import Style from 'style/incompletedpage.scss';
 
 export default class Completed extends React.Component{
   constructor(props){
     super(props);
+    this._model = new SurveyModel();
+  }
+
+  componentDidMount(){
+    this._model.fetchAllSurveys();
   }
 
   render(){
