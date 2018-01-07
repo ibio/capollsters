@@ -25,8 +25,12 @@ export default class Completed extends React.Component{
 
   render(){
     const listView = this.state.surveyList.map((value, index) => {
-      return (<li key={index} className="list-group-item"><a href="#">value.title</a></li>);
-    });
+      return (
+        <li key={index} className="list-group-item">
+          <a href={`#/${this.props.role}/completed/poll:${value.id}`}>{value.title}</a>
+        </li>
+      );
+    }, this);
     return(
       <div>
         <Header />

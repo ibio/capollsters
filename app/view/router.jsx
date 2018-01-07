@@ -27,6 +27,8 @@ function render() {
 	let path = document.location.hash.split(Config.DIR_RULE + '/')[1] || '';
 	let navObj = {};
 	let node = null;
+	//strip ids
+	path = path.split(':')[0] || '';
 	// let navObj, searchMode;
 	if(document.location.pathname === '/' || Config.TEST_MODE){
 		navObj = Util.getNav(Config.DIR_RULE);
@@ -42,7 +44,7 @@ function render() {
 					break;
       case Config.NAV_STUDENT_COMPLETED:
           document.title = 'Student Completed';
-          node = <Completed title={document.title} />;
+          node = <Completed role="student" title={document.title} />;
           break;
 			case Config.NAV_STUDENT_RESULT:
           document.title = 'Student Poll Result';
@@ -54,7 +56,7 @@ function render() {
 				break;
 				case Config.NAV_TEACHER_COMPLETED:
 						document.title = 'Teacher Completed';
-						node = <Completed title={document.title} />;
+						node = <Completed role="teacher" title={document.title} />;
 						break;
 				case Config.NAV_TEACHER_RESULT:
 						document.title = 'Teacher Poll Result';
