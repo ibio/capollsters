@@ -40,7 +40,7 @@ function render() {
 				break;
 			case Config.NAV_STUDENT_POLL:
 					document.title = 'Student Poll';
-					node = <Incompleted title={document.title} />;
+					node = <Incompleted nid={navObj.nid} title={document.title} />;
 					break;
       case Config.NAV_STUDENT_COMPLETED:
           document.title = 'Student Completed';

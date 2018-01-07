@@ -33,7 +33,7 @@ export default class Incompleted extends React.Component{
 
 	componentDidMount(){
 		// console.log(this.props.navs[0]);
-		this._model.fetchSurvey();
+		this._model.fetchSurvey(this.props.nid);
 		window.addEventListener('scroll', e => {this.handleWindowScroll(e);});
 	}
 
