@@ -28,8 +28,8 @@ export default class ResultItem extends React.Component {
       resultsView = (<div className="list-group">{listView}</div>);
     }else{
       // http://recharts.org/#/en-US/api/BarChart
-      // [{ name: 'a', value: [5,8] }, { name: 'b', value: 12 }];
-      const data = _.map(answers, (answer, index) => ({name:index, students:answer.text}));
+      // [{ name: 'a', value: 5 }, { name: 'b', value: 12 }];
+      const data = _.map(answers, (answer, key) => ({name:key, students:answer.text}));
       resultsView = (
         <BarChart width={600} height={250} data={data}>
           <CartesianGrid strokeDasharray="3 3" />
