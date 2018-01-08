@@ -29,7 +29,7 @@ export default class ResultItem extends React.Component {
     }else{
       // http://recharts.org/#/en-US/api/BarChart
       // [{ name: 'a', value: 5 }, { name: 'b', value: 12 }];
-      const data = _.map(answers, (answer, key) => ({name:key, students:answer.text}));
+      const data = _.map(answers, (answer, key) => ({name:key, students:answer}));
       resultsView = (
         <BarChart width={600} height={250} data={data}>
           <CartesianGrid strokeDasharray="3 3" />
