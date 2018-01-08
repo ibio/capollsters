@@ -34,7 +34,7 @@ export default class ShortAnswer extends React.Component {
   }
 
   render() {
-    const { question } = this.props;
+    const { question, deleteCallback } = this.props;
     const { currentAnswer } = this.state;
     return (
       <div className="panel panel-capollsters" ref={ref => {this.refDiv = ref;}} onFocus={e => this.handleFocus()} >
@@ -43,7 +43,7 @@ export default class ShortAnswer extends React.Component {
           <input type="text" className="form-control" onChange={(changeEvent) => this.inputHandler(changeEvent)} onBlur={e => this.handleBlur(e)} />
         </div>
         <div className="panel-footer">
-          {currentAnswer ? `You answered: "${currentAnswer}"`: ''}
+          {deleteCallback? (<a className="btn-round btn-pigment btn-sm" role="button" onClick={() => deleteCallback(question)}>Delete</a>):currentAnswer ? `You answered: "${currentAnswer}"`: ''}
         </div>
       </div>
     );

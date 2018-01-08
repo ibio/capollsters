@@ -38,7 +38,7 @@ export default class Completed extends React.Component{
           <div className="row">
             <div className="col-md-12">
               <div className="jumbotron">
-                <h1>Completed Surveys</h1>
+                <h1>Surveys</h1>
               </div>
             </div>
           </div>
