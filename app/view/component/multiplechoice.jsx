@@ -19,6 +19,10 @@ export default class MultipleChoice extends React.Component {
     };
   };
 
+  handleFocus(e){
+    this.props.onSelect();
+  }
+
   handleSelected(event) {
     const eventTarget = event.currentTarget;
     const parent = eventTarget.parentNode;
@@ -27,6 +31,7 @@ export default class MultipleChoice extends React.Component {
     });
     event.target.classList.add('active');
     this.setState({currentAnswer: event.currentTarget.innerHTML});
+    this.props.onFinish(event.currentTarget.innerHTML);
   };
 
   // for parent to call
@@ -38,7 +43,7 @@ export default class MultipleChoice extends React.Component {
     const { question, answers } = this.props;
     const { currentAnswer } = this.state;
     return (
-      <div className="panel panel-capollsters" ref={ref => {this.refDiv = ref;}}>
+      <div className="panel panel-capollsters" ref={ref => {this.refDiv = ref;}} onFocus={e => this.handleFocus()} >
         <div className="panel-heading"><strong><span className="glyphicon glyphicon-arrow-right" aria-hidden="true" /> {question}</strong></div>
         <div className="panel-body">
           <div className="list-group">

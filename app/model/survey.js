@@ -79,6 +79,10 @@ export default class SurveyModel extends ProxyModel{
 		});
 	}
 
+	saveQuestion(data, silent, callback, scope){
+		console.log('saveQuestion', data);
+	}
+
 	//http://v2.wp-api.org/reference/pages/
 	fetchBatch(where, silent, callback, scope){
 		var url = Config.URL_PAGE;

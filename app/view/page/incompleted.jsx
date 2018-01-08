@@ -52,14 +52,30 @@ export default class Incompleted extends React.Component{
 		}
 	}
 
+	handleSelect(index){
+		this.setState({progressIndex: index});
+	}
+
+	handleFinish(value, index){
+		const question = this.state.questionsList[index];
+		// console.log(question, data);
+		const data = {
+			id: question.id,
+			userId: 'student1',
+			questionId: this.props.nid,
+			value,
+		};
+		this._model.saveQuestion(data, true);
+	}
+
 	render(){
 		const questionList = this.state.questionsList.map((value, index) => {
 			const numberedQuestion = (index + 1) + ' ' + value.text;
 			let questionView;
 			if(value.options && value.options.length){
-				questionView = <MultipleChoice key={index} data-id={value.id} question={numberedQuestion} answers={value.options} ref={ref => {this.panelList.push(ref);}} />;
+				questionView = <MultipleChoice key={index} data-id={value.id} question={numberedQuestion} answers={value.options} ref={ref => {this.panelList.push(ref);}} onSelect={e => this.handleSelect(index)} onFinish={value => this.handleFinish(value, index)} />;
 			}else{
-				questionView = <ShortAnswer key={index} question={numberedQuestion} ref={ref => {this.panelList.push(ref);}} />;
+				questionView = <ShortAnswer key={index} question={numberedQuestion} ref={ref => {this.panelList.push(ref);}} onSelect={e => this.handleSelect(index)} onFinish={value => this.handleFinish(value, index)} />;
 			}
 			return questionView;
 		});

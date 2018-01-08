@@ -21,6 +21,14 @@ export default class ShortAnswer extends React.Component {
     this.setState({ currentAnswer: event.target.value });
   }
 
+  handleFocus(e){
+    this.props.onSelect();
+  }
+
+  handleBlur(e){
+    this.props.onFinish(this.state.currentAnswer);
+  }
+
   getBoundingClientRect(){
     return this.refDiv.getBoundingClientRect();
   }
@@ -29,10 +37,10 @@ export default class ShortAnswer extends React.Component {
     const { question } = this.props;
     const { currentAnswer } = this.state;
     return (
-      <div className="panel panel-capollsters" ref={ref => {this.refDiv = ref;}}>
+      <div className="panel panel-capollsters" ref={ref => {this.refDiv = ref;}} onFocus={e => this.handleFocus()} >
         <div className="panel-heading"><strong><span className="glyphicon glyphicon-arrow-right" aria-hidden="true" /> {question}</strong></div>
         <div className="panel-body">
-          <input type="text" className="form-control" onChange={(changeEvent) => this.inputHandler(changeEvent)} />
+          <input type="text" className="form-control" onChange={(changeEvent) => this.inputHandler(changeEvent)} onBlur={e => this.handleBlur(e)} />
         </div>
         <div className="panel-footer">
           {currentAnswer ? `You answered: "${currentAnswer}"`: ''}
