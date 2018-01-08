@@ -23,7 +23,7 @@ export default class ResultItem extends React.Component {
     //
     if(type === 'OPEN_RESPONSE'){
       const listView = _.map(answers, (answer, index) => {
-        return <a key={index} className="list-group-item" href="javascript:void(0);">{answer.text}</a>;
+        return <a key={index} className="list-group-item" href="javascript:void(0);">{answer}</a>;
       });
       resultsView = (<div className="list-group">{listView}</div>);
     }else{
