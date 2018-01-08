@@ -60,9 +60,8 @@ export default class Incompleted extends React.Component{
 		const question = this.state.questionsList[index];
 		// console.log(question, data);
 		const data = {
-			id: question.id,
+			questionId: question.id,
 			userId: 'student1',
-			questionId: this.props.nid,
 			value,
 		};
 		this._model.saveQuestion(data, true);
@@ -79,6 +78,7 @@ export default class Incompleted extends React.Component{
 			}
 			return questionView;
 		});
+    // <p className="text-center"><a className="btn-round btn-pigment btn-lg" href="#/main">Submit</a></p>
 		return(
 			<div>
 				<Header>
@@ -98,7 +98,7 @@ export default class Incompleted extends React.Component{
 						<div className="col-md-12">
 							{questionList}
 							<hr />
-							<p className="text-center"><a className="btn-round btn-pigment btn-lg" href="#/main">Submit</a></p>
+
 						</div>
 		      </div>
 		    </div>
