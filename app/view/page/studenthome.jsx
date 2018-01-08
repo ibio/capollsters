@@ -13,7 +13,7 @@ export default function(props){
 	      <div className="row">
 					<div className="col-md-6">
 						<a className="menu-box pull-right" href="#/student/poll">
-							<strong>Poll</strong>
+							<strong>Survey</strong>
 							<img src="res/icon_assessment.png" />
 						</a>
 					</div>
@@ -28,7 +28,7 @@ export default function(props){
 				<div className="message-box">
 					<div className="messagebox-text">
 						<h4>Hey, you're back!</h4>
-						<section className="messagebox-text-section">Let's get started the poll.</section>
+						<section className="messagebox-text-section">Let's get started with a survey.</section>
 					</div>
 				</div>
 

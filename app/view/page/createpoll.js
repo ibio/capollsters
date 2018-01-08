@@ -62,7 +62,7 @@ export default class CreatePoll extends React.Component{
           <div className="row">
             <div className="col-md-12">
               <div className="jumbotron poll-head">
-                <h1>Create a New Poll</h1>
+                <h1>Create a New Survey</h1>
                 <div className="poll-bg" />
               </div>
             </div>
@@ -73,7 +73,7 @@ export default class CreatePoll extends React.Component{
               <hr />
               {questionList}
               <hr />
-              <p className="text-center"><a onClick={e => {this.handleCreatePoll(e)}} className="btn-round btn-pigment btn-lg" href="javascript:void(0);">Create This Poll</a></p>
+              <p className="text-center"><a onClick={e => {this.handleCreatePoll(e)}} className="btn-round btn-pigment btn-lg" href="javascript:void(0);">Create This Survey</a></p>
             </div>
           </div>
         </div>

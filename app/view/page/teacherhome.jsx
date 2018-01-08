@@ -28,7 +28,7 @@ export default function TeacherHome(props){
 				<div className="message-box">
 					<div className="messagebox-text">
 						<h4>Hey, you're back!</h4>
-						<section className="messagebox-text-section">Let's get started the poll.</section>
+						<section className="messagebox-text-section">Let's get started with a survey.</section>
 					</div>
 				</div>
 
