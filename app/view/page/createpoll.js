@@ -31,7 +31,7 @@ export default class CreatePoll extends React.Component{
   }
 
   handleCreatePoll(){
-    this._model.createPoll(this.state.questionsList, () => {
+    this._model.createPoll(this.titleRef.value, this.state.questionsList, () => {
         console.log('done!');
     });
   }
@@ -69,6 +69,13 @@ export default class CreatePoll extends React.Component{
           </div>
           <div className="row">
             <div className="col-md-12">
+              <form>
+                <div className="form-group">
+                  <label htmlFor="exampleInputTitle" style={{color:'white'}}>Survey Title</label>
+                  <input type="email" className="form-control" id="exampleInputTitle" placeholder="Example Survey" ref={inputRef => {this.titleRef = inputRef;}} />
+                </div>
+              </form>
+
               <QuestionCreator onCreate={(text, options) => {this.handleCreateQuestion(text, options)}} />
               <hr />
               {questionList}
