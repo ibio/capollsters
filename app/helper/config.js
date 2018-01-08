@@ -13,6 +13,7 @@ data.URL_SURVEY = data.ROOT === '' ? 'res/survey_item.json?' : data.ROOT + '/api
 data.URL_CREATE_POLL = data.ROOT === '' ? 'res/survey_item.json?' : data.ROOT + '/api/surveys';
 data.URL_GET_ALL_SURVEY = data.ROOT === '' ? '' : data.ROOT + '/api/surveys';
 data.URL_RESULT = data.ROOT === '' ? 'res/survey_result.json?' : data.ROOT + '/api/surveys';
+data.URL_SAVE_POLL = data.ROOT === '' ? '?' : data.ROOT + '/api/responses';
 
 data.DIR_RULE = '#';
 data.NAV_DEFAULT = '';

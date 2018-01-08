@@ -75,12 +75,15 @@ export default class SurveyModel extends ProxyModel{
 			questions
 		};
 		this.post(Config.URL_CREATE_POLL, data, null, function(response){
-			callback && callback();
+			callback && callback(response);
 		});
 	}
 
 	saveQuestion(data, silent, callback, scope){
 		console.log('saveQuestion', data);
+		this.post(Config.URL_SAVE_POLL, data, null, function(response){
+			callback && callback(response);
+		});
 	}
 
 	//http://v2.wp-api.org/reference/pages/
